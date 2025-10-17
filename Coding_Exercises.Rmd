@@ -2,7 +2,9 @@
 title: "Coding_Exercises"
 author: "Neda Safari"
 date: "`r Sys.Date()`"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -31,6 +33,8 @@ bisonWeight<- function(knz_bison, x) {
 ```
 
 3.Create a boxplot showing weight distribution between male and female bison, and then conduct a t-test to see if weight is significantly difference between males and females.
+
+We have p-value = 0.000961 < 0.05 so this means that the wieght is significantly difference between males and females.
 ```{r}
 bison_test<-bison2%>%
   drop_na()
@@ -41,8 +45,6 @@ bison_test%>%
 
 t.test(animal_weight ~ animal_sex, data= bison_test)
 ```
-
-
 
 
 
